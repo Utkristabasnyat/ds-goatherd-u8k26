@@ -2,10 +2,13 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 const int GOAT_ARRAY_SIZE = 15;
+const int MIN_GOATS = 5;
+const int MAX_GOATS = 20;
 
 class Goat {
 private:
@@ -150,16 +153,18 @@ public:
 };
 
 int main() {
+  srand(time(0));
+
   DoublyLinkedList list;
 
-  // testing with three goats
-  Goat goat1(6, "Billy", "White");
-  Goat goat2(10, "Daisy", "Brown");
-  Goat goat3(4, "Rocky", "Black");
+  // generate a random number of goats
+  int size = rand() % (MAX_GOATS - MIN_GOATS + 1) + MIN_GOATS;
 
-  list.push_back(goat1);
-  list.push_back(goat2);
-  list.push_front(goat3);
+  // add random goats to the list
+  for (int i = 0; i < size; i++) {
+    Goat newGoat;
+    list.push_back(newGoat);
+  }
 
   cout << "Forward:" << endl;
   list.print();
