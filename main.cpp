@@ -172,5 +172,14 @@ int main() {
   cout << endl << "Backward:" << endl;
   list.print_reverse();
 
+  // test an empty list
+  DoublyLinkedList emptyList;
+
+  cout << endl << "Empty list forward:" << endl;
+  emptyList.print();
+
+  cout << endl << "Empty list backward:" << endl;
+  emptyList.print_reverse();
+
   return 0;
 }
